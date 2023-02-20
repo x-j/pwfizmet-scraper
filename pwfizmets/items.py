@@ -6,7 +6,7 @@
 import scrapy
 
 
-class PwfizmetsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class MeteoStamp(scrapy.Item):
+    id = scrapy.Field()
+    datetime_str = scrapy.Field()
+    image_urls = scrapy.Field()

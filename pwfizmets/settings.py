@@ -62,9 +62,12 @@ CONCURRENT_REQUESTS = 2
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'pwfizmets.pipelines.PwfizmetsPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    # 'scrapy.pipelines.images.ImagesPipeline': 1,
+   'pwfizmets.pipelines.PwfizmetsPipeline': 300,
+}
+
+IMAGES_STORE = 'output'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

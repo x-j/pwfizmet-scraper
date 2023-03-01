@@ -13,7 +13,7 @@ class PwfizmetSpider(Spider):
     def parse(self, response):
         stamp = MeteoStamp()
         stamp['datetime_str'] =  response.css('td[colspan="4"] b::text').get()
-        stamp['id'] = f"{stamp['datetime_str'].split(' ')[0].replace('-','')}_{'{:0>5}'.format(stamp['datetime_str'].split(' ')[1].replace(':','-'))}"
+        stamp['id'] = f"{stamp['datetime_str'].split(' ')[0][2:].replace('-','')}_{'{:0>5}'.format(stamp['datetime_str'].split(' ')[1].replace(':','-'))}"
 
         # images
         stamp['image_urls'] = []

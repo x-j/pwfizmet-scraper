@@ -4,3 +4,5 @@ pwfizmets/__pycache__
 pwfizmets/spiders/__pycache__
 
 output/
+
+*.xcf

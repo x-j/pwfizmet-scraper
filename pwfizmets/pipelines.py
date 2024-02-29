@@ -14,7 +14,8 @@ logger = logging.getLogger(__name__)
 class PwfizmetsPipeline(ImagesPipeline):
 
     def file_path(self, request, response=None, info=None, *, item=None):
-        filen = os.path.splitext(request.url.split('/')[-1])
-        filepath = os.path.join(filen[0], item['id'] + filen[1])
+        img_type, file_ext = os.path.splitext(request.url.split('/')[-1])
+        output_foldername = item['id'][:4]
+        filepath = os.path.join(output_foldername, img_type, item['id'] + file_ext)
         logger.info('Saving an image: '+str(filepath))
         return str(filepath)
